@@ -10,6 +10,10 @@
     "javascript",
     "utils"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suressk/sure-utils.git"
+  },
   "author": "suressk",
   "license": "MIT",
   "devDependencies": {

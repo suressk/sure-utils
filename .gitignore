@@ -1,1 +1,4 @@
 node_modules
+
+# Just used as local test file only
+test.ts
