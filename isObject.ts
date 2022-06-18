@@ -6,8 +6,8 @@ import isNull from "./isNull"
  * @param val the check value
  * @returns boolean
  */
-const isObjectLike = (val: unknown): val is object => {
+const isObject = (val: unknown): val is Record<any, any> => {
   return typeof val === 'object' && !isNull(val)
 }
 
-export default isObjectLike
+export default isObject

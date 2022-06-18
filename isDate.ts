@@ -1,6 +1,6 @@
 import { toTypeString } from './.internal/staticFucs'
 import { dateTag } from './.internal/constants'
-import isObjectLike from './isObjectLike'
+import isObject from './isObject'
 
 /**
  * Check if `value` is `Date`
@@ -10,7 +10,7 @@ import isObjectLike from './isObjectLike'
  */
 const isDate = (val: unknown): boolean => {
   // call `Object.prototype.toString` to check
-  return isObjectLike(val) && toTypeString(val) === dateTag
+  return isObject(val) && toTypeString(val) === dateTag
 }
 
 export default isDate

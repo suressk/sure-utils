@@ -4,7 +4,8 @@
   "description": "A javascript helper-functions package",
   "main": "index.ts",
   "scripts": {
-    "style": "eslint *.ts .internal/**/*.ts src/**/*.ts"
+    "style": "eslint *.ts .internal/**/*.ts src/**/*.ts",
+    "build": "npx tsx"
   },
   "keywords": [
     "javascript",
