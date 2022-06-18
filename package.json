@@ -1,0 +1,21 @@
+{
+  "name": "sure-utils",
+  "version": "1.0.1",
+  "description": "A javascript helper-functions package",
+  "main": "index.ts",
+  "scripts": {
+    "style": "eslint *.ts .internal/**/*.ts src/**/*.ts"
+  },
+  "keywords": [
+    "javascript",
+    "utils"
+  ],
+  "author": "suressk",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.26.0",
+    "typescript": "^4.7.4"
+  }
+}
