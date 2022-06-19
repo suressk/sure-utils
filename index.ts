@@ -26,6 +26,27 @@ import hasChanged from './hasChanged'
 // get values
 import getPrototype from './getPrototype'
 
+export {
+  isUndefined,
+  isNull,
+  isSymbol,
+  isNumber,
+  isString,
+  isArray,
+  isPlainObject,
+  isObject,
+  isDate,
+  isFunction,
+  isMap,
+  isSet,
+  isPromise,
+
+  hasOwnProp,
+  hasChanged,
+
+  getPrototype
+}
+
 export default {
   isUndefined,
   isNull,
