@@ -1,15 +1,15 @@
 /** Used to check objects for own properties. */
 export const hasOwnProperty = Object.prototype.hasOwnProperty
 
+export const getPrototypeOf = Object.getPrototypeOf
+
 /* Used to transfer value for string */
 export const objectToString = Object.prototype.toString
 
-export const toTypeString = (val: unknown): string => {
-  /* get the RowType as [object RowType] */
-  return objectToString.call(val)
-}
+/* get the RowType as [object RowType] */
+export const toTypeString = (val: unknown): string => objectToString.call(val)
 
-/*  */
+/* isArray */
 export const isArray = Array.isArray
 
 /*

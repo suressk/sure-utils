@@ -19,8 +19,12 @@ import isMap from './isMap'
 import isSet from './isSet'
 import isPromise from './isPromise'
 
+// has funcs
 import hasOwnProp from './hasOwnProp'
 import hasChanged from './hasChanged'
+
+// get values
+import getPrototype from './getPrototype'
 
 export default {
   isUndefined,
@@ -38,5 +42,7 @@ export default {
   isPromise,
 
   hasOwnProp,
-  hasChanged
+  hasChanged,
+
+  getPrototype
 }
