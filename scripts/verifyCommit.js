@@ -7,6 +7,10 @@
 
 const { bgRed, red, green } = require('chalk')
 const msgPath = process.env.GIT_PARAMS
+
+console.log('msgPath: ', msgPath)
+console.log('env', process.env)
+
 const msg = require('fs')
   .readFileSync(msgPath, 'utf-8')
   .trim()
