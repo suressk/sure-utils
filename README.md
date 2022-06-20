@@ -33,7 +33,7 @@ console.log(hasChanged(newData, data)) // false
 - Default import
 
 ```js 
-import utils from 'sure-utils'
+import * as utils from 'sure-utils'
 
 console.log(utils.isNull(null)) // true
 console.log(utils.isNull(1)) // false

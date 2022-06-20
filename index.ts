@@ -5,65 +5,23 @@
 export * from './array'
 
 // judge the value type
-import isUndefined from './isUndefined'
-import isNull from './isNull'
-import isSymbol from './isSymbol'
-import isNumber from './isNumber'
-import isString from './isString'
-import isArray from './isArray'
-import isPlainObject from './isPlainObject'
-import isObject from './isObject'
-import isDate from './isDate'
-import isFunction from './isFunction'
-import isMap from './isMap'
-import isSet from './isSet'
-import isPromise from './isPromise'
+export { default as isUndefined } from './isUndefined'
+export { default as isNull } from './isNull'
+export { default as isSymbol } from './isSymbol'
+export { default as isNumber } from './isNumber'
+export { default as isString } from './isString'
+export { default as isArray } from './isArray'
+export { default as isPlainObject } from './isPlainObject'
+export { default as isObject } from './isObject'
+export { default as isDate } from './isDate'
+export { default as isFunction } from './isFunction'
+export { default as isMap } from './isMap'
+export { default as isSet } from './isSet'
+export { default as isPromise } from './isPromise'
 
 // has funcs
-import hasOwnProp from './hasOwnProp'
-import hasChanged from './hasChanged'
+export { default as hasOwnProp } from './hasOwnProp'
+export { default as hasChanged } from './hasChanged'
 
 // get values
-import getPrototype from './getPrototype'
-
-export {
-  isUndefined,
-  isNull,
-  isSymbol,
-  isNumber,
-  isString,
-  isArray,
-  isPlainObject,
-  isObject,
-  isDate,
-  isFunction,
-  isMap,
-  isSet,
-  isPromise,
-
-  hasOwnProp,
-  hasChanged,
-
-  getPrototype
-}
-
-export default {
-  isUndefined,
-  isNull,
-  isSymbol,
-  isNumber,
-  isString,
-  isArray,
-  isPlainObject,
-  isObject,
-  isDate,
-  isFunction,
-  isMap,
-  isSet,
-  isPromise,
-
-  hasOwnProp,
-  hasChanged,
-
-  getPrototype
-}
+export { default as getPrototype } from './getPrototype'
