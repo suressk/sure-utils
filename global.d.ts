@@ -1,5 +1,5 @@
-import sureUtils from "./index";
+// import sureUtils from "./index";
 
-declare namespace sureUtils {
+// declare namespace sureUtils {
 
-}
+// }

@@ -4,8 +4,10 @@
   "description": "A javascript helper-functions package",
   "main": "index.ts",
   "scripts": {
-    "style": "eslint *.ts .internal/**/*.ts src/**/*.ts",
-    "build": "npx tsc"
+    "lint": "eslint *.ts .internal/**/*.ts src/**/*.ts",
+    "build": "npx tsc",
+    "prepare": "husky install",
+    "test": "jest"
   },
   "keywords": [
     "javascript",
@@ -16,22 +18,28 @@
     "url": "https://github.com/suressk/sure-utils.git"
   },
   "author": "suressk",
+  "email": "sure_ssk@outlook.com",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^28.1.2",
     "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.18.0",
     "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.0",
     "jest": "^28.1.1",
     "lint-staged": "^13.0.2",
+    "picocolors": "^1.0.0",
     "prettier": "^2.7.1",
     "ts-jest": "^28.0.5",
-    "typescript": "^4.7.4",
-    "yorkie": "^2.0.0"
+    "typescript": "^4.7.4"
+  },
+  "bugs": {
+    "url": "https://github.com/suressk/sure-utils/issues"
   },
   "lint-staged": {
-    "*.js": [
+    "*.(js,ts)": [
       "prettier --write"
     ],
     "*.ts?(x)": [

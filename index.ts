@@ -25,3 +25,12 @@ export { default as hasChanged } from './hasChanged'
 
 // get values
 export { default as getPrototype } from './getPrototype'
+
+// HOF
+export { default as debounce } from './debounce'
+
+// remove the default export
+// export default {
+//   isUndefined
+//   // ... others
+// }

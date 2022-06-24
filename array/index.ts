@@ -1,6 +1,6 @@
 /**
  * Used to remove an item of the array
- * 
+ *
  * @param arr the origin array
  * @param el the remove item
  */
