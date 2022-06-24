@@ -1,3 +1,10 @@
 node_modules
 
+# test config
 test
+__test__
+
+# lint config
+husky
+scripts
+

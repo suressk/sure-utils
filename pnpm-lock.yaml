@@ -12,6 +12,7 @@ specifiers:
   lint-staged: ^13.0.2
   picocolors: ^1.0.0
   prettier: ^2.7.1
+  rimraf: ^3.0.2
   ts-jest: ^28.0.5
   typescript: ^4.7.4
 
@@ -27,6 +28,7 @@ devDependencies:
   lint-staged: 13.0.2
   picocolors: 1.0.0
   prettier: 2.7.1
+  rimraf: 3.0.2
   ts-jest: 28.0.5_zv2ltmnvcc5apkdaecods742je
   typescript: 4.7.4
 
