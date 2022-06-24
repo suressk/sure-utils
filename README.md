@@ -16,10 +16,11 @@ pnpm i sure-utils
 
 ## Usage
 
-- Demand import
+### In `.ts` file (`ESM`)
 
 ```js
 import { isNull, hasChanged } from 'sure-utils'
+// import * as sureUtils from 'sure-utils'
 
 console.log(isNull(null)) // true
 console.log(isNull(1)) // false
@@ -30,15 +31,37 @@ newData.a = 'b'
 console.log(hasChanged(newData, data)) // false
 ```
 
-- Default import
+### In `.js` file
 
-```js 
-import * as utils from 'sure-utils'
+**CommJS:** `sure-utils/lib/cjs/*`
 
-console.log(utils.isNull(null)) // true
-console.log(utils.isNull(1)) // false
+```js
+const { isNull, hasChanged } = require('sure-utils/lib/cjs')
+// const sureUtils = require('sure-utils/lib/cjs')
+
+console.log(isNull(null)) // true
+console.log(isNull(1)) // false
+
+const data = { a: 1 }
+const newData = data
+newData.a = 'b'
+console.log(hasChanged(newData, data)) // false
 ```
 
+**ES Module:** `sure-utils/lib/esm/*`
+
+```js
+import { isNull, hasChanged } from 'sure-utils/lib/esm'
+// import * as sureUtils from 'sure-utils/lib/esm'
+
+console.log(isNull(null)) // true
+console.log(isNull(1)) // false
+
+const data = { a: 1 }
+const newData = data
+newData.a = 'b'
+console.log(hasChanged(newData, data)) // false
+```
 <!--
 In Node.js
 

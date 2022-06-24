@@ -2,11 +2,11 @@
   "name": "sure-utils",
   "version": "1.0.14",
   "description": "A javascript helper-functions package",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "scripts": {
     "lint": "eslint *.ts .internal/**/*.ts src/**/*.ts",
-    "build": "rimraf dist/ && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
+    "build": "rimraf lib/ && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
     "prepare": "husky install",
     "test": "jest"
   },
