@@ -11,7 +11,7 @@ const msg = readFileSync(msgPath, 'utf-8').trim()
 // console.log() // 打印提示信息后空行
 
 const commitRE =
-  /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/
+  /^(revert: )?(feat|fix|merge|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/
 
 if (!commitRE.test(msg)) {
   console.log()
