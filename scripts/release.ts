@@ -82,7 +82,7 @@ async function main(): Promise<void> {
     initial: `release: ${tag}`
   })
   await run('git', ['commit', '-m', res.commitMsg])
-  // await run('git', ['push'])
+  await run('git', ['push'])
 }
 
 main().catch(e => {
