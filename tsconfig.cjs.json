@@ -4,6 +4,6 @@
     "module": "CommonJs",
     // "declaration": true,
     // "declarationDir": "./dist/types/",
-    "outDir": "./dist/cjs/"
+    "outDir": "./lib/cjs/"
   }
 }

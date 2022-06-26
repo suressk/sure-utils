@@ -12,7 +12,7 @@ module.exports = {
     sourceType: 'module'
   },
   // extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['@typescript-eslint'],
+  plugins: ['import'],
   // plugins: ["jest"],
   rules: {
     'no-debugger': 'error',
@@ -30,10 +30,6 @@ module.exports = {
     // rest spread usage in destructure as it compiles into a verbose helper.
     // TS now compiles assignment spread into Object.assign() calls so that
     // is allowed.
-    'no-restricted-syntax': [
-      'error',
-      'ObjectPattern > RestElement',
-      'AwaitExpression'
-    ]
+    'no-restricted-syntax': ['error', 'ObjectPattern > RestElement']
   }
 }
