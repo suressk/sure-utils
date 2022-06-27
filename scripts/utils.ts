@@ -7,6 +7,7 @@ import semver from 'semver'
 import type { Options as ExecaOptions } from 'execa'
 import execa from 'execa'
 import fsExtra from 'fs-extra'
+import prompts from 'prompts'
 
 // 命令行参数
 export const args = minimist(process.argv.slice(2))
@@ -131,4 +132,43 @@ export function updateVersion(pkgPath: string, version: string): void {
   const pkg = fsExtra.readJSONSync(pkgPath)
   pkg.version = version
   writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n')
+}
+
+// confirm to pbulish package to npmjs.com
+export async function confirmToPublish() {
+  const { yes }: { yes: boolean } = await prompts({
+    type: 'confirm',
+    name: 'yes',
+    message: `Confirm publishing to npmjs?`
+  })
+
+  return yes
+}
+
+// push to Github
+export async function generateCommit(
+  pkgDir: string,
+  initialCommitMsg: string = 'chore: update some config'
+) {
+  step('\nGenerating changelog...')
+  const changelogArgs = [
+    'conventional-changelog',
+    '-p',
+    'angular',
+    '-i',
+    'CHANGELOG.md',
+    '-s'
+  ]
+  await run('npx', changelogArgs, { cwd: pkgDir })
+
+  step('\nPushing to GitHub...')
+  await run('git', ['add', '-A'])
+  const { commitMsg }: { commitMsg: string } = await prompts({
+    type: 'text',
+    name: 'commitMsg',
+    message: 'Input commit message',
+    initial: initialCommitMsg
+  })
+  await run('git', ['commit', '-m', commitMsg])
+  await run('git', ['push'])
 }

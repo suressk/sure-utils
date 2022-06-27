@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "test": "jest",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "pub": "ts-node scripts/publish.ts"
+    "push": "ts-node scripts/push.ts"
   },
   "keywords": [
     "javascript",

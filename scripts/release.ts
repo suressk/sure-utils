@@ -7,7 +7,8 @@ import {
   getVersionChoices,
   step,
   updateVersion,
-  run
+  run,
+  generateCommit
 } from './utils'
 
 async function main(): Promise<void> {
@@ -58,31 +59,33 @@ async function main(): Promise<void> {
     return
   }
 
-  step('\nUpdating package version...')
-  updateVersion(pkgPath, targetVersion)
+  const { confirmToUpdateVersion }: { confirmToUpdateVersion: boolean } =
+    await prompts({
+      type: 'confirm',
+      name: 'confirmToUpdateVersion',
+      message: `Confirm to update version?`
+    })
 
-  step('\nGenerating changelog...')
-  const changelogArgs = [
-    'conventional-changelog',
-    '-p',
-    'angular',
-    '-i',
-    'CHANGELOG.md',
-    '-s'
-  ]
-  await run('npx', changelogArgs, { cwd: pkgDir })
+  if (confirmToUpdateVersion) {
+    step('\nUpdating package version...')
+    updateVersion(pkgPath, targetVersion)
+  }
 
-  step('\nPushing to GitHub...')
+  // push to Github
+  await generateCommit(pkgDir, `release: ${tag}`)
 
-  await run('git', ['add', '-A'])
-  const res: { commitMsg: string } = await prompts({
-    type: 'text',
-    name: 'commitMsg',
-    message: 'Input commit message',
-    initial: `release: ${tag}`
+  // publish to npm
+  const { confirmPublish }: { confirmPublish: boolean } = await prompts({
+    type: 'confirm',
+    name: 'confirmPublish',
+    message: `Confirm publishing to npmjs?`
   })
-  await run('git', ['commit', '-m', res.commitMsg])
-  await run('git', ['push'])
+
+  if (!confirmPublish) {
+    return
+  }
+
+  await run('npm', ['publish'])
 }
 
 main().catch(e => {
