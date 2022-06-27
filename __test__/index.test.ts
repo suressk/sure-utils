@@ -1,4 +1,4 @@
-import isNull from '../isNull'
+import { isNull } from '..'
 
 describe('isNull', () => {
   expect(isNull(null)).toBe(true)

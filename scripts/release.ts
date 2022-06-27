@@ -24,13 +24,13 @@ async function main(): Promise<void> {
     })
 
     if (release === 'custom') {
-      const res: { version: string } = await prompts({
+      const { version }: { version: string } = await prompts({
         type: 'text',
         name: 'version',
         message: 'Input custom version',
         initial: currentVersion
       })
-      targetVersion = res.version
+      targetVersion = version
     } else {
       targetVersion = release
     }
@@ -49,30 +49,33 @@ async function main(): Promise<void> {
     args.tag = 'alpha'
   }
 
-  const { yes }: { yes: boolean } = await prompts({
+  const { confirmRelease }: { confirmRelease: boolean } = await prompts({
     type: 'confirm',
-    name: 'yes',
+    name: 'confirmRelease',
     message: `Releasing ${colors.yellow(tag)} Confirm?`
   })
 
-  if (!yes) {
+  if (!confirmRelease) {
     return
   }
 
-  const { confirmToUpdateVersion }: { confirmToUpdateVersion: boolean } =
-    await prompts({
-      type: 'confirm',
-      name: 'confirmToUpdateVersion',
-      message: `Confirm to update version?`
-    })
+  // release a version must to update version
+  // const { confirmToUpdateVersion }: { confirmToUpdateVersion: boolean } =
+  //   await prompts({
+  //     type: 'confirm',
+  //     name: 'confirmToUpdateVersion',
+  //     message: `Confirm to update version?`
+  //   })
+  // if (confirmToUpdateVersion) {
+  // }
 
-  if (confirmToUpdateVersion) {
-    step('\nUpdating package version...')
-    updateVersion(pkgPath, targetVersion)
-  }
+  step('\nUpdating package version...')
+  updateVersion(pkgPath, targetVersion)
 
   // push to Github
   await generateCommit(pkgDir, `release: ${tag}`)
+  await run('git', ['tag', tag]) // add tag
+  await run('git', ['push'])
 
   // publish to npm
   const { confirmPublish }: { confirmPublish: boolean } = await prompts({

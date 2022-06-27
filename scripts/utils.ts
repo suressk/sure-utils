@@ -134,21 +134,10 @@ export function updateVersion(pkgPath: string, version: string): void {
   writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n')
 }
 
-// confirm to pbulish package to npmjs.com
-export async function confirmToPublish() {
-  const { yes }: { yes: boolean } = await prompts({
-    type: 'confirm',
-    name: 'yes',
-    message: `Confirm publishing to npmjs?`
-  })
-
-  return yes
-}
-
-// push to Github
+// generate commit message and commit all files
 export async function generateCommit(
   pkgDir: string,
-  initialCommitMsg: string = 'chore: update some config'
+  initialCommitMsg: string = 'chore: update some configuration'
 ) {
   step('\nGenerating changelog...')
   const changelogArgs = [
@@ -170,5 +159,4 @@ export async function generateCommit(
     initial: initialCommitMsg
   })
   await run('git', ['commit', '-m', commitMsg])
-  await run('git', ['push'])
 }

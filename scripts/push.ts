@@ -1,9 +1,10 @@
-import { getPackageInfo, generateCommit } from './utils'
+import { getPackageInfo, generateCommit, run } from './utils'
 
 async function main() {
   const { pkgDir } = getPackageInfo()
 
   await generateCommit(pkgDir)
+  await run('git', ['push']) // push to Github
 }
 
 main().catch(e => {
