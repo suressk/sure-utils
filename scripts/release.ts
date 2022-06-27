@@ -77,18 +77,19 @@ async function main(): Promise<void> {
   await run('git', ['tag', tag]) // add tag
   await run('git', ['push'])
 
+  // it needs log-in, so give up publishing with this way
   // publish to npm
-  const { confirmPublish }: { confirmPublish: boolean } = await prompts({
-    type: 'confirm',
-    name: 'confirmPublish',
-    message: `Confirm publishing to npmjs?`
-  })
+  // const { confirmPublish }: { confirmPublish: boolean } = await prompts({
+  //   type: 'confirm',
+  //   name: 'confirmPublish',
+  //   message: `Confirm publishing to npmjs?`
+  // })
 
-  if (!confirmPublish) {
-    return
-  }
+  // if (!confirmPublish) {
+  //   return
+  // }
 
-  await run('npm', ['publish'])
+  // await run('npm', ['publish'])
 }
 
 main().catch(e => {

@@ -20,7 +20,7 @@ pnpm i sure-utils
 
 ```js
 import { isNull, hasChanged } from 'sure-utils'
-// import * as sureUtils from 'sure-utils'
+// import sureUtils from 'sure-utils'
 
 console.log(isNull(null)) // true
 console.log(isNull(1)) // false
@@ -52,7 +52,7 @@ console.log(hasChanged(newData, data)) // false
 
 ```js
 import { isNull, hasChanged } from 'sure-utils/lib/esm'
-// import * as sureUtils from 'sure-utils/lib/esm'
+// import sureUtils from 'sure-utils/lib/esm'
 
 console.log(isNull(null)) // true
 console.log(isNull(1)) // false
@@ -62,6 +62,7 @@ const newData = data
 newData.a = 'b'
 console.log(hasChanged(newData, data)) // false
 ```
+
 <!--
 In Node.js
 
