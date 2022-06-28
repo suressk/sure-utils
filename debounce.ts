@@ -1,6 +1,5 @@
 import root from './.internal/root'
-import isFunction from './isFunction'
-import isNull from './isNull'
+import { isFunction, isNull } from './is'
 
 /**
  * 防抖

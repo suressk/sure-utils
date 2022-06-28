@@ -1,5 +1,5 @@
 import freeGlobal from './freeGlobal'
-import isObject from '../isObject'
+import { isObject } from '../is'
 
 /** Detect free variable `globalThis` */
 const freeGlobalThis =
