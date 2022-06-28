@@ -1,3 +1,17 @@
+## [1.0.16-alpha.0](https://github.com/suressk/sure-utils/compare/v1.0.16...v1.0.16-alpha.0) (2022-06-28)
+
+
+### Bug Fixes
+
+* update `isFn` import path ([ad16214](https://github.com/suressk/sure-utils/commit/ad162146ccee23dc69eeebfd0b611c24fde21afd))
+
+
+### Features
+
+* remove lots of `is*` funcs, put these gather in `is.ts` ([e00f8cf](https://github.com/suressk/sure-utils/commit/e00f8cf1664ef6763a43d5d3c1bbd67c9987bc7b))
+
+
+
 ## 1.0.16 (2022-06-27)
 
 
