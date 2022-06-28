@@ -4,14 +4,6 @@ Using `npm`, `yarn` or `pnpm`
 
 ```shell
 npm i sure-utils
-
-# or
-
-yarn add sure-utils
-
-# or
-
-pnpm i sure-utils
 ```
 
 ## Usage

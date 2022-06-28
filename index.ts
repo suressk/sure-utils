@@ -1,24 +1,25 @@
-/* Array function */
-export * from './array'
+/* Array funcs */
+import { removeArrayItem } from './array'
 
-// judge the value type
-import isUndefined from './isUndefined'
-import isNull from './isNull'
-import isSymbol from './isSymbol'
-import isNumber from './isNumber'
-import isString from './isString'
-import isArray from './isArray'
-import isPlainObject from './isPlainObject'
-import isObject from './isObject'
-import isDate from './isDate'
-import isFunction from './isFunction'
-import isMap from './isMap'
-import isSet from './isSet'
-import isPromise from './isPromise'
+// is funcs
+import {
+  isUndefined,
+  isNull,
+  isSymbol,
+  isNumber,
+  isString,
+  isArray,
+  isPlainObject,
+  isObject,
+  isDate,
+  isFunction,
+  isMap,
+  isSet,
+  isPromise
+} from './is'
 
 // has funcs
-import hasOwnProp from './hasOwnProp'
-import hasChanged from './hasChanged'
+import { hasChanged, hasOwnProp } from './has'
 
 // get values
 import getPrototype from './getPrototype'
@@ -43,7 +44,8 @@ export {
   hasOwnProp,
   hasChanged,
   getPrototype,
-  debounce
+  debounce,
+  removeArrayItem
 }
 
 export default {
@@ -63,5 +65,8 @@ export default {
   hasOwnProp,
   hasChanged,
   getPrototype,
-  debounce
+
+  debounce,
+
+  removeArrayItem
 }
