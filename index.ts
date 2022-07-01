@@ -1,5 +1,5 @@
 /* Array funcs */
-import { removeArrayItem } from './array'
+import { removeArrayItem, uniqArray } from './array'
 
 // is funcs
 import {
@@ -45,7 +45,8 @@ export {
   hasChanged,
   getPrototype,
   debounce,
-  removeArrayItem
+  removeArrayItem,
+  uniqArray
 }
 
 export default {
@@ -68,5 +69,6 @@ export default {
 
   debounce,
 
-  removeArrayItem
+  removeArrayItem,
+  uniqArray
 }
