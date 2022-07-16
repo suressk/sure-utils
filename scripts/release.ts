@@ -75,6 +75,7 @@ async function main(): Promise<void> {
   // push to Github
   await generateCommit(pkgDir, `release: ${tag}`)
   await run('git', ['tag', tag]) // add tag
+  await run('git', ['push', 'origin', `refs/tags/v${tag}`]) // push tag to github
   await run('git', ['push'])
 
   // it needs log-in, so give up publishing with this way
