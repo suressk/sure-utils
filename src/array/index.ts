@@ -18,7 +18,7 @@ export const removeArrayItem = <T>(arr: T[], el: T) => {
  *
  * @param arr need uniq array
  */
-export const uniqArray = <T extends any>(arr: T[]) => {
+export const uniqArray = <T>(arr: T[]) => {
   if (!arr || !arr.length) {
     return []
   }

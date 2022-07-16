@@ -3,12 +3,12 @@ import semver from 'semver'
 import colors from 'picocolors'
 import {
   args,
+  generateCommit,
   getPackageInfo,
   getVersionChoices,
-  step,
-  updateVersion,
   run,
-  generateCommit
+  step,
+  updateVersion
 } from './utils'
 
 async function main(): Promise<void> {
@@ -92,7 +92,7 @@ async function main(): Promise<void> {
   // await run('npm', ['publish'])
 }
 
-main().catch(e => {
+main().catch((e) => {
   console.error(e)
   process.exit(1)
 })

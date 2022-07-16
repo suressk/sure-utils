@@ -26,19 +26,24 @@ export const getPackageInfo = () => {
   const pkgPath = resolve(__dirname, '../package.json')
 
   if (!existsSync(pkgPath)) {
-    throw new Error(`package.json not found`)
+    throw new Error('package.json not found')
   }
 
+  // const pkg: {
+  //   name: string
+  //   version: string
+  //   private?: boolean
+  // } = require(pkgPath)
   const pkg: {
     name: string
     version: string
     private?: boolean
-  } = require(pkgPath)
+  } = fsExtra.readJSONSync(pkgPath)
 
   const currentVersion = pkg.version
 
   if (pkg.private) {
-    throw new Error(`Package is private`)
+    throw new Error('Package is private')
   }
 
   return {
@@ -105,7 +110,7 @@ export function getVersionChoices(currentVersion: string) {
   } else if (currentAlpha) {
     versionChoices.push({
       title: 'beta',
-      value: inc('patch') + '-beta.0'
+      value: `${inc('patch')}-beta.0`
     })
   } else {
     versionChoices.push({
@@ -115,7 +120,7 @@ export function getVersionChoices(currentVersion: string) {
   }
   versionChoices.push({ value: 'custom', title: 'custom' })
 
-  versionChoices = versionChoices.map(i => {
+  versionChoices = versionChoices.map((i) => {
     i.title = `${i.title} (${i.value})`
     return i
   })
@@ -131,13 +136,13 @@ export function step(msg: string) {
 export function updateVersion(pkgPath: string, version: string): void {
   const pkg = fsExtra.readJSONSync(pkgPath)
   pkg.version = version
-  writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n')
+  writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`)
 }
 
 // generate commit message and commit all files
 export async function generateCommit(
   pkgDir: string,
-  initialCommitMsg: string = 'chore: update some configuration'
+  initialCommitMsg = 'chore: update some configuration'
 ) {
   step('\nGenerating changelog...')
   const changelogArgs = [

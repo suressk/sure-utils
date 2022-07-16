@@ -3,19 +3,19 @@ import { removeArrayItem, uniqArray } from './array'
 
 // is funcs
 import {
-  isUndefined,
-  isNull,
-  isSymbol,
-  isNumber,
-  isString,
   isArray,
-  isPlainObject,
-  isObject,
   isDate,
   isFunction,
   isMap,
+  isNull,
+  isNumber,
+  isObject,
+  isPlainObject,
+  isPromise,
   isSet,
-  isPromise
+  isString,
+  isSymbol,
+  isUndefined
 } from './is'
 
 // has funcs
@@ -45,30 +45,6 @@ export {
   hasChanged,
   getPrototype,
   debounce,
-  removeArrayItem,
-  uniqArray
-}
-
-export default {
-  isUndefined,
-  isNull,
-  isSymbol,
-  isNumber,
-  isString,
-  isArray,
-  isPlainObject,
-  isObject,
-  isDate,
-  isFunction,
-  isMap,
-  isSet,
-  isPromise,
-  hasOwnProp,
-  hasChanged,
-  getPrototype,
-
-  debounce,
-
   removeArrayItem,
   uniqArray
 }

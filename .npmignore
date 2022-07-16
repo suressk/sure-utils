@@ -8,3 +8,6 @@ __test__
 husky
 scripts
 
+# source code
+src
+.internal

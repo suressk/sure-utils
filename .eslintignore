@@ -1,0 +1,12 @@
+# .eslintrc
+
+# git-hooks
+.husky
+
+# .npmignore
+# .gitignore
+
+*.md
+
+node_modules
+pnpm-lock.yaml

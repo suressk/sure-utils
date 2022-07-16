@@ -14,7 +14,6 @@ export const setTag = '[object Set]'
 export const stringTag = '[object String]'
 export const symbolTag = '[object Symbol]'
 export const weakMapTag = '[object WeakMap]'
-
 export const arrayBufferTag = '[object ArrayBuffer]'
 export const dataViewTag = '[object DataView]'
 export const float32Tag = '[object Float32Array]'

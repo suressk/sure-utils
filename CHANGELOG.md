@@ -1,3 +1,21 @@
+# [1.1.0](https://github.com/suressk/sure-utils/compare/v1.0.16-alpha.0...v1.1.0) (2022-07-15)
+
+
+### Features
+
+* add `uniqArray` func, remove outdate `hasX.ts` file ([22201ac](https://github.com/suressk/sure-utils/commit/22201ac086b2aa9694ce23722bca038adb3addfd))
+
+
+
+# [1.1.0](https://github.com/suressk/sure-utils/compare/v1.0.16-alpha.0...v1.1.0) (2022-07-15)
+
+
+### Features
+
+* add `uniqArray` func, remove outdate `hasX.ts` file ([22201ac](https://github.com/suressk/sure-utils/commit/22201ac086b2aa9694ce23722bca038adb3addfd))
+
+
+
 ## [1.0.16-alpha.0](https://github.com/suressk/sure-utils/compare/v1.0.16...v1.0.16-alpha.0) (2022-06-28)
 
 
