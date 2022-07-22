@@ -1,3 +1,23 @@
+## [1.1.1](https://github.com/suressk/sure-utils/compare/v1.1.0...v1.1.1) (2022-07-22)
+
+
+### Bug Fixes
+
+* update `debounce` ([86a63fa](https://github.com/suressk/sure-utils/commit/86a63fac3edf6221033bc0802003619e7481679f))
+
+
+### Features
+
+* add `date` funcs ([cb07ebf](https://github.com/suressk/sure-utils/commit/cb07ebf798301a7920b614787a5023e568a5f249))
+* add `getRandomNum`, `getAverage` ([90c8380](https://github.com/suressk/sure-utils/commit/90c83801e2884ffd645769e6f347fe5c7ac010d8))
+* add `isElement` ([3d501fc](https://github.com/suressk/sure-utils/commit/3d501fc96f621ce71e8a4bda2b6b805cf6b1fa9e))
+* add `throttle` ([879a69f](https://github.com/suressk/sure-utils/commit/879a69fd74c299c3ca2f0bf5421a1a7245ec2554))
+* add some `regular expressions` ([ebe4a85](https://github.com/suressk/sure-utils/commit/ebe4a85aaf12151b987d9616a1b301896e5b37d4))
+* add some `string` funcs ([65db2eb](https://github.com/suressk/sure-utils/commit/65db2eb58e8891172a3d8f47dad5fc2939220248))
+* add some browser funcs ([9719b58](https://github.com/suressk/sure-utils/commit/9719b58d646cc2a62fe50c3cd6fda525480b6851))
+
+
+
 # [1.1.0](https://github.com/suressk/sure-utils/compare/v1.0.16-alpha.0...v1.1.0) (2022-07-15)
 
 
