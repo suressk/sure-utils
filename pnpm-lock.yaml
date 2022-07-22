@@ -10,7 +10,7 @@ specifiers:
   conventional-changelog-cli: ^2.2.2
   enquirer: ^2.3.6
   eslint: ^8.18.0
-  eslint-config-suressk: ^0.1.0
+  eslint-config-suressk: ^0.1.1
   execa: 4.0.2
   fs-extra: ^10.1.0
   husky: ^8.0.0
@@ -37,7 +37,7 @@ devDependencies:
   conventional-changelog-cli: 2.2.2
   enquirer: 2.3.6
   eslint: 8.19.0
-  eslint-config-suressk: 0.1.0_4x5o4skxv6sl53vpwefgt23khm
+  eslint-config-suressk: 0.1.1_4x5o4skxv6sl53vpwefgt23khm
   execa: 4.0.2
   fs-extra: 10.1.0
   husky: 8.0.1
@@ -2243,8 +2243,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-suressk/0.1.0_4x5o4skxv6sl53vpwefgt23khm:
-    resolution: {integrity: sha512-rOHJC1oV1Cfemb6XfyOVbS/XntmL4lgSyRHXvYqBC7NAbiugXXofQBw53CdXN3qbIS59AId3qIRKHPCe9n3jQQ==}
+  /eslint-config-suressk/0.1.1_4x5o4skxv6sl53vpwefgt23khm:
+    resolution: {integrity: sha512-qwBSA0i3/Xuc2O5zrVlr0yQQWm5qcTD9A56HNJoZ7fwA/bzpa8Ei1Ciasgs7z8YSsJBm9xOCw2aSkGh0H0spsQ==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
