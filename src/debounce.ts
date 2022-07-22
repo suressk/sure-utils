@@ -1,67 +1,98 @@
-import root from './.internal/root'
-import { isFunction, isNull } from './is'
+export interface DebounceOptions<Result> {
+  isImmediate?: boolean
+  maxWait?: number
+  callback?: (data: Result) => void
+}
+
+export interface DebouncedFunction<
+  Args extends any[],
+  F extends (...args: Args) => any
+> {
+  (this: ThisParameterType<F>, ...args: Args & Parameters<F>): Promise<
+    ReturnType<F>
+  >
+  cancel: (reason?: any) => void
+}
+
+interface DebouncedPromise<FunctionReturn> {
+  resolve: (result: FunctionReturn) => void
+  reject: (reason?: any) => void
+}
 
 /**
- * 防抖
- * @param {Function} fn need debounced function
- * @param {Number} delay delay time
- * @param {Boolean} immediate immediate call the function or not
+ * debounce
+ * @param func debounce to invoke func
+ * @param waitMilliseconds wait to be invoked time(ms)
+ * @param options
+ * @returns
  */
-export default function debounce(
-  fn: Function,
-  delay: number,
-  immediate: boolean = false
-) {
-  if (!isFunction(fn)) {
-    throw new TypeError('Expected a function')
-  }
+export default function debounce<Args extends any[], F extends (...args: Args) => any>(
+  func: F,
+  waitMilliseconds = 50,
+  options: DebounceOptions<ReturnType<F>> = {}
+): DebouncedFunction<Args, F> {
+  let timerId: ReturnType<typeof setTimeout> | null
+  const isImmediate = options.isImmediate ?? false
+  const callback = options.callback ?? false
+  const maxWait = options.maxWait
+  let lastInvokeTime = Date.now()
 
-  // Bypass `requestAnimationFrame` by explicitly setting `delay = 0`
-  // const useRAF = !delay && delay !== 0 && isFunction(root.requestAnimationFrame)
+  let promises: DebouncedPromise<ReturnType<F>>[] = []
 
-  const canUseRAF =
-    !delay && delay !== 0 && isFunction(root.requestAnimationFrame)
+  function nextInvokeTimeout() {
+    if (maxWait !== undefined) {
+      const timeSinceLastInvocation = Date.now() - lastInvokeTime
 
-  let timerId: any = null
-
-  const startTimer = (pendindFunc: Function, delay: number) => {
-    if (canUseRAF) {
-      root.cancelAnimationFrame(timerId)
-      // immediate invoke the fn
-      return root.requestAnimationFrame(pendindFunc)
-    }
-    return setTimeout(pendindFunc, delay)
-  }
-
-  const cancelTimer = (id: number) => {
-    if (canUseRAF) {
-      return root.cancelAnimationFrame(id)
-    }
-    clearTimeout(id)
-  }
-
-  return function (...args: any[]) {
-    // @ts-ignore
-    const ctx: any = this
-    let callNow
-    if (timerId !== null) {
-      cancelTimer(timerId)
-    }
-    if (immediate) {
-      // callNow = !timerId
-      callNow = isNull(timerId)
-      if (callNow) {
-        fn.apply(ctx, args)
+      if (timeSinceLastInvocation + waitMilliseconds >= maxWait) {
+        return maxWait - timeSinceLastInvocation
       }
-      // immedite invoke fn, delay to reset timerId with 'null' for
-      // next time, in order to immediate invoke the fn
-      timerId = startTimer(() => {
-        timerId = null
-      }, delay)
-      return
     }
-    timerId = startTimer(() => {
-      fn.apply(ctx, args)
-    }, delay)
+
+    return waitMilliseconds
   }
+
+  const debouncedFunction = function (
+    this: ThisParameterType<F>,
+    ...args: Parameters<F>
+  ) {
+    const context = this
+    return new Promise<ReturnType<F>>((resolve, reject) => {
+      const invokeFunction = function () {
+        timerId = null
+        lastInvokeTime = Date.now()
+        if (!isImmediate) {
+          const result = func.apply(context, args)
+          callback && callback(result)
+          promises.forEach(({ resolve }) => resolve(result))
+          promises = []
+        }
+      }
+
+      const shouldCallNow = isImmediate && timerId === null
+
+      if (timerId !== null) {
+        clearTimeout(timerId)
+      }
+
+      timerId = setTimeout(invokeFunction, nextInvokeTimeout())
+
+      if (shouldCallNow) {
+        const result = func.apply(context, args)
+        callback && callback(result)
+        return resolve(result)
+      }
+      promises.push({ resolve, reject })
+    })
+  }
+
+  debouncedFunction.cancel = function (reason?: any) {
+    if (timerId !== null) {
+      clearTimeout(timerId)
+    }
+    promises.forEach(({ reject }) => reject(reason))
+    promises = []
+  }
+
+  return debouncedFunction
 }
+
