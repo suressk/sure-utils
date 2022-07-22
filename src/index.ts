@@ -1,50 +1,12 @@
-/* Array funcs */
-import { removeArrayItem, uniqArray } from './array'
+export * from './array'
+export * from './browser'
+export * from './date'
+export * from './number'
+export * from './regex'
+export * from './string'
+export * from './has'
+export * from './is'
+export { default as debounce } from './debounce'
+export { default as getPrototype } from './getPrototype'
+export { default as throttle } from './throttle'
 
-// is funcs
-import {
-  isArray,
-  isDate,
-  isFunction,
-  isMap,
-  isNull,
-  isNumber,
-  isObject,
-  isPlainObject,
-  isPromise,
-  isSet,
-  isString,
-  isSymbol,
-  isUndefined
-} from './is'
-
-// has funcs
-import { hasChanged, hasOwnProp } from './has'
-
-// get values
-import getPrototype from './getPrototype'
-
-// HOF
-import debounce from './debounce'
-
-export {
-  isUndefined,
-  isNull,
-  isSymbol,
-  isNumber,
-  isString,
-  isArray,
-  isPlainObject,
-  isObject,
-  isDate,
-  isFunction,
-  isMap,
-  isSet,
-  isPromise,
-  hasOwnProp,
-  hasChanged,
-  getPrototype,
-  debounce,
-  removeArrayItem,
-  uniqArray
-}
