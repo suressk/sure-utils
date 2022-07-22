@@ -12,13 +12,3 @@ export const toTypeString = (val: unknown): string => objectToString.call(val)
 /* isArray */
 export const isArray = Array.isArray
 
-/*
- * Check if `value` is an `Element`
- * 
- * @param {unknown} the value to check
- * @returns {boolean} value is Element
- */
-export const isElement = (el: unknown): el is Element => {
-  if (typeof Element === 'undefined') return false
-  return el instanceof Element
-}

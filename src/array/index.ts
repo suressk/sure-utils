@@ -25,15 +25,5 @@ export const uniqArray = <T>(arr: T[]) => {
   if (Set && isFunction(Set)) {
     return Array.from(new Set(arr))
   }
-  // // 兼容方案，暂时未实现
-  // const res = []
-  // const usedMap = new Map() || {}
-  // for (const item of arr) {
-  // }
   return arr
-}
-
-export default {
-  removeArrayItem,
-  uniqArray
 }
