@@ -1,3 +1,14 @@
+## [1.1.2](https://github.com/suressk/sure-utils/compare/v1.1.1...v1.1.2) (2022-07-25)
+
+
+### Features
+
+* add `getNativeBrowserinfo` func ([c31ba84](https://github.com/suressk/sure-utils/commit/c31ba84d7a61e32f8d4303e5a24d319a02d90a41))
+* add `getNowTimeStr` func ([c1d8974](https://github.com/suressk/sure-utils/commit/c1d8974a857b277ffa579363214e26f485368247))
+* add `getUserIp` func ([9a6b5b7](https://github.com/suressk/sure-utils/commit/9a6b5b758a6ad84720ff6a9f580eb5e5e3e46467))
+
+
+
 ## [1.1.1](https://github.com/suressk/sure-utils/compare/v1.1.0...v1.1.1) (2022-07-22)
 
 
