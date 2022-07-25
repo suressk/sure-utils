@@ -1,3 +1,8 @@
+// [track] 获取浏览器信息
+export * from './getNativeBrowserInfo'
+
+export * from './getUserIp'
+
 /**
  * Copy text to clipboard
  * 将文本复制到剪贴板
