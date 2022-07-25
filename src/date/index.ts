@@ -54,3 +54,11 @@ export const getDayOfYear = (date: Date): number => ~~((date.getTime() - new Dat
  * example: getTimeFromDate(new Date()) => '13:06:45'
  */
 export const getTimeFromDate = (date: Date): string => date.toTimeString().slice(0, 8)
+
+/**
+ * Get now time and format to be `xxxx-xx-xx xx:xx:xx`
+ * @returns
+ *
+ * example: getNowTime() => `'2022-07-25 15:18:34'`
+ */
+export const getNowTimeStr = () => (new Date()).toLocaleString().replaceAll('/', '-')
