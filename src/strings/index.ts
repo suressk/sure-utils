@@ -1,13 +1,5 @@
-import { getRandomNum } from '../number'
-
-const randomLetters = [
-  '0', '1', '2', '3', '4', '5',
-  '6', '7', '8', '9', 'A', 'B',
-  'C', 'D', 'E', 'F', 'G', 'H',
-  'I', 'J', 'K', 'L', 'M', 'N',
-  'O', 'P', 'Q', 'R', 'S', 'T',
-  'U', 'V', 'W', 'X', 'Y', 'Z'
-]
+import { getRandomNum } from '../numbers'
+import { randomLetters } from '../.internal/constants'
 
 /**
  * Capitalize the first letter of the English string
