@@ -1,10 +1,10 @@
-export interface DebounceOptions<Result> {
+interface DebounceOptions<Result> {
   isImmediate?: boolean
   maxWait?: number
   callback?: (data: Result) => void
 }
 
-export interface DebouncedFunction<
+interface DebouncedFunction<
   Args extends any[],
   F extends (...args: Args) => any
 > {
@@ -26,7 +26,10 @@ interface DebouncedPromise<FunctionReturn> {
  * @param options
  * @returns
  */
-export default function debounce<Args extends any[], F extends (...args: Args) => any>(
+export default function debounce<
+  Args extends any[],
+  F extends (...args: Args) => any
+>(
   func: F,
   waitMilliseconds = 50,
   options: DebounceOptions<ReturnType<F>> = {}

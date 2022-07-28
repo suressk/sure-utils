@@ -6,7 +6,7 @@
 # .npmignore
 # .gitignore
 
-*.md
+# *.md
 
 node_modules
 pnpm-lock.yaml

@@ -8,7 +8,3 @@ export const objectToString = Object.prototype.toString
 
 /* get the RowType as [object RowType] */
 export const toTypeString = (val: unknown): string => objectToString.call(val)
-
-/* isArray */
-export const isArray = Array.isArray
-

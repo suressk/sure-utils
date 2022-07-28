@@ -3,7 +3,7 @@ import { getNowTimeStr } from '../date'
 /**
  * Native browser info
  */
-interface NativeBrowserInfoType {
+interface BrowserInfo {
   domain?: string
   url?: string
   title?: string
@@ -41,49 +41,52 @@ export const formatMemoryToMB = (val: number) => `${(val / 1024 / 1024).toFixed(
  * @param val
  * @returns
  */
-export const formatMillisecondsToSecordsStr = (val: number) => `${~~(val / 1000)}s`
+export const formatMsToSecordsStr = (val: number) => `${~~(val / 1000)}s`
 
 /**
  * Get browser native information
  * @returns
  */
-export const getNativeBrowserInfo = () => {
+export const getBrowserInfo = (): Promise<BrowserInfo> => {
   // 获取浏览器原生数据
   return new Promise((resolve) => {
-    const browserInfos: NativeBrowserInfoType = {}
+    const browserInfos: BrowserInfo = {}
     if (document) {
+      const { domain, URL, title, referrer } = document
       /* 域名 */
-      browserInfos.domain = document.domain || ''
+      browserInfos.domain = domain || ''
       /* 当前 Url 地址 */
-      browserInfos.url = document.URL || ''
+      browserInfos.url = URL || ''
       /* 当前页标题 */
-      browserInfos.title = document.title || ''
+      browserInfos.title = title || ''
       /* 上一跳路径 */
-      browserInfos.referrer = document.referrer || ''
+      browserInfos.referrer = referrer || ''
     }
     // Window 对象数据
     if (window?.screen) {
+      const { height, width, colorDepth } = window.screen
       /* 屏显信息 */
-      browserInfos.screenHeight = window.screen.height || 0
-      browserInfos.screenWidth = window.screen.width || 0
-      browserInfos.color = window.screen.colorDepth || 0
+      browserInfos.screenHeight = height || 0
+      browserInfos.screenWidth = width || 0
+      browserInfos.color = colorDepth || 0
     }
     // navigator 对象数据
     if (navigator) {
-      browserInfos.lang = navigator.language || '' // 获取所用语言种类
-      browserInfos.ua = navigator.userAgent.toLowerCase() // 运行环境
+      const { language, userAgent } = navigator
+      browserInfos.lang = language || '' // 获取所用语言种类
+      browserInfos.ua = userAgent.toLowerCase() // 运行环境
     }
     // 获取性能相关参数
     if (window?.performance) {
-      browserInfos.memory = formatMemoryToMB((window.performance as WindowPerformance).memory.usedJSHeapSize)
-      const timing = window.performance.timing
-      browserInfos.connectTime = formatMillisecondsToSecordsStr(timing.connectEnd - timing.connectStart)
-      browserInfos.responseTime = formatMillisecondsToSecordsStr(timing.responseEnd - timing.responseStart)
-      browserInfos.renderTime = formatMillisecondsToSecordsStr(timing.domComplete - timing.domLoading)
+      browserInfos.memory = formatMemoryToMB((window.performance as WindowPerformance)?.memory?.usedJSHeapSize)
+      const timing = window.performance?.timing || {}
+      browserInfos.connectTime = formatMsToSecordsStr(timing.connectEnd - timing.connectStart)
+      browserInfos.responseTime = formatMsToSecordsStr(timing.responseEnd - timing.responseStart)
+      browserInfos.renderTime = formatMsToSecordsStr(timing.domComplete - timing.domLoading)
     }
     browserInfos.watchTime = getNowTimeStr()
     resolve(browserInfos)
   })
 }
 
-export default getNativeBrowserInfo
+// export default getNativeBrowserInfo

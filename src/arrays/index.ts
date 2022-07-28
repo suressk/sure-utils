@@ -1,5 +1,3 @@
-import { isFunction } from '../is'
-
 /**
  * Used to remove an item of the array
  *
@@ -22,8 +20,5 @@ export const uniqArray = <T>(arr: T[]) => {
   if (!arr || !arr.length) {
     return []
   }
-  if (Set && isFunction(Set)) {
-    return Array.from(new Set(arr))
-  }
-  return arr
+  return Array.from(new Set(arr))
 }

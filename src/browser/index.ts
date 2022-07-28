@@ -1,5 +1,5 @@
 // [track] 获取浏览器信息
-export * from './getNativeBrowserInfo'
+export * from './getBrowserInfo'
 
 export * from './getUserIp'
 
