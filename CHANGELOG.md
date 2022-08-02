@@ -1,3 +1,12 @@
+## [1.1.3](https://github.com/suressk/sure-utils/compare/v1.1.2...v1.1.3) (2022-08-02)
+
+
+### Features
+
+* add colorful logger funcs ([70e245f](https://github.com/suressk/sure-utils/commit/70e245f43d3559688d3a190721f8e016b361f109))
+
+
+
 ## [1.1.2](https://github.com/suressk/sure-utils/compare/v1.1.1...v1.1.2) (2022-07-25)
 
 
