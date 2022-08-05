@@ -11,3 +11,8 @@ scripts
 # source code
 src
 .internal
+
+build.config.ts
+CHANGELOG.md
+
+tsconfig.*
