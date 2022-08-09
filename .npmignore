@@ -8,9 +8,10 @@ __test__
 husky
 scripts
 
+node_modules
+
 # source code
-src
-.internal
+src/*
 
 build.config.ts
 CHANGELOG.md
