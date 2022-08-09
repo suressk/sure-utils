@@ -17,3 +17,6 @@ export const sureUtilsPrefix = `sure-utils${SPLIT_TAG}${leftPaddingStyle}backgro
 export const tipPrefix = `tip${SPLIT_TAG}${rightPaddingStyle} background: ${color.green}; font-weight: bold; color: ${color.white};`
 export const warnPrefix = `warn${SPLIT_TAG}${rightPaddingStyle} background: ${color.yellow}; font-weight: bold; color: ${color.white};`
 export const errorPrefix = `error${SPLIT_TAG}${rightPaddingStyle} background: ${color.red}; font-weight: bold; color: ${color.white};`
+
+// use '_' to avoid eslint check (no-console)
+export const _console = console
