@@ -2,7 +2,7 @@
 
 Using `npm`, `yarn` or `pnpm`
 
-```shell
+```bash
 npm i sure-utils
 ```
 
