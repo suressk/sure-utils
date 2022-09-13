@@ -3,7 +3,7 @@
 Using `npm`, `yarn` or `pnpm`
 
 ```shell
-npm i sure-utils
+npm i sure-utils --save
 ```
 
 ## Usage
