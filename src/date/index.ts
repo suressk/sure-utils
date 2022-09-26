@@ -1,6 +1,5 @@
 import { isDate } from '../is'
-
-const oneDayMilliseconds = 86400000 // 3600(s) * 24(h) * 1000(ms)
+import { oneDayMilliseconds } from '../.internal/constants'
 
 /**
  * Check `date` is valid or not
