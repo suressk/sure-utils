@@ -3,6 +3,10 @@ export * from './getBrowserInfo'
 
 export * from './getUserIp'
 
+export * from './dynamicLoadJs'
+
+export { default as ua } from './ua'
+
 /**
  * Copy text to clipboard
  * 将文本复制到剪贴板
@@ -21,8 +25,3 @@ export const getSelectedText = () => window.getSelection()?.toString()
  * 检测当前环境是否是黑暗模式
  */
 export const isDarkMode = window?.matchMedia('(prefers-color-scheme: dark)').matches
-
-/**
- * 检测当前环境是否是黑暗模式
- */
-export const isAppleDevice = (/Mac|iPhone|iPad|iPod/ig).test(navigator.userAgent)
