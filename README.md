@@ -2,8 +2,8 @@
 
 Using `npm`, `yarn` or `pnpm`
 
-```bash
-npm i sure-utils
+```shell
+npm i sure-utils --save
 ```
 
 ## Usage

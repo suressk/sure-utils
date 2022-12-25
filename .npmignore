@@ -5,7 +5,7 @@ test
 __test__
 
 # lint config
-husky
+.husky
 scripts
 
 node_modules
