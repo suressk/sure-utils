@@ -12,16 +12,25 @@ const dynamicLoadJs = (url: string, onSuccess?: Function, onFail?: OnErrorEventH
   scriptEl.setAttribute('src', url)
 
   if (typeof onSuccess === 'function') {
-    scriptEl.onload = scriptEl.onreadystatechange = () => {
-      if (
-        !scriptEl.readyState
-        || scriptEl.readyState === 'loaded'
-        || scriptEl.readyState === 'complete'
-      ) {
-        onSuccess()
-        scriptEl.onload = scriptEl.onreadystatechange = null
-      }
+    scriptEl.onload = () => {
+      onSuccess()
+      scriptEl.onload = null
     }
+    /**
+     * 兼容 IE（弃）
+     */
+    // if (scriptEl.readyState) {
+    //   scriptEl.onreadystatechange = () => {
+    //     if (
+    //       !scriptEl.readyState
+    //       || scriptEl.readyState === 'loaded'
+    //       || scriptEl.readyState === 'complete'
+    //     ) {
+    //       onSuccess()
+    //       scriptEl.onload = scriptEl.onreadystatechange = null
+    //     }
+    //   }
+    // }
   }
 
   if (typeof onFail === 'function') {
