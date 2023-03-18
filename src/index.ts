@@ -16,4 +16,4 @@ export * from './.internal/staticFucs'
 export { default as debounce } from './debounce'
 export { default as getPrototype } from './getPrototype'
 export { default as throttle } from './throttle'
-
+export { default as sleep } from './sleep'
