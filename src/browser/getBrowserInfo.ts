@@ -41,7 +41,7 @@ export const formatMemoryToMB = (val: number) => `${(val / 1024 / 1024).toFixed(
  * @param val
  * @returns
  */
-export const formatMsToSecordsStr = (val: number) => `${~~(val / 1000)}s`
+export const formatMsToSecondsStr = (val: number) => `${~~(val / 1000)}s`
 
 /**
  * Get browser native information
@@ -80,9 +80,9 @@ export const getBrowserInfo = (): Promise<BrowserInfo> => {
     if (window?.performance) {
       browserInfos.memory = formatMemoryToMB((window.performance as WindowPerformance)?.memory?.usedJSHeapSize)
       const timing = window.performance?.timing || {}
-      browserInfos.connectTime = formatMsToSecordsStr(timing.connectEnd - timing.connectStart)
-      browserInfos.responseTime = formatMsToSecordsStr(timing.responseEnd - timing.responseStart)
-      browserInfos.renderTime = formatMsToSecordsStr(timing.domComplete - timing.domLoading)
+      browserInfos.connectTime = formatMsToSecondsStr(timing.connectEnd - timing.connectStart)
+      browserInfos.responseTime = formatMsToSecondsStr(timing.responseEnd - timing.responseStart)
+      browserInfos.renderTime = formatMsToSecondsStr(timing.domComplete - timing.domLoading)
     }
     browserInfos.watchTime = getNowTimeStr()
     resolve(browserInfos)
