@@ -2,8 +2,6 @@
   "name": "sure-utils",
   "version": "1.1.5",
   "description": "A javascript helper-functions package",
-  "author": "suressk",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/suressk/sure-utils.git"
@@ -11,10 +9,6 @@
   "bugs": {
     "url": "https://github.com/suressk/sure-utils/issues"
   },
-  "keywords": [
-    "javascript",
-    "utils"
-  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -26,7 +20,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "lint": "eslint scripts/**/*.ts src/**/*.ts --fix",
+    "lint": "eslint  --config eslint.config.mjs scripts/**/*.ts src/**/*.ts --fix",
     "build": "unbuild",
     "build:tsc": "rimraf lib/ && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
     "prepare": "husky install",
@@ -35,8 +29,15 @@
     "push": "ts-node scripts/push.ts",
     "release": "ts-node scripts/release.ts"
   },
-  "email": "sure_ssk@outlook.com",
+  "keywords": [
+    "javascript",
+    "utils"
+  ],
+  "author": "suressk",
+  "license": "MIT",
+  "email": "suresskun@outlook.com",
   "devDependencies": {
+    "@suressk/eslint-config": "^1.0.10",
     "@types/fs-extra": "^9.0.13",
     "@types/jest": "^28.1.2",
     "@types/minimist": "^1.2.2",
@@ -46,8 +47,7 @@
     "bumpp": "^8.2.1",
     "conventional-changelog-cli": "^2.2.2",
     "enquirer": "^2.3.6",
-    "eslint": "^8.18.0",
-    "eslint-config-suressk": "^0.1.1",
+    "eslint": "^10.4.1",
     "execa": "4.0.2",
     "fs-extra": "^10.1.0",
     "husky": "^8.0.0",

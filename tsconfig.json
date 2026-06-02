@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "lib",
     "sourceMap": false,
     "target": "esnext",
     "useDefineForClassFields": false,
     "module": "esnext",
+    "ignoreDeprecations": "6.0",
     "moduleResolution": "node",
+    "outDir": "lib",
     "allowJs": false,
+    "rootDir": ".",
     "strict": true,
     "noUnusedLocals": true,
     "experimentalDecorators": true,
@@ -22,7 +24,6 @@
     "types": [
       "jest",
       "node"
-    ],
-    "rootDir": "."
+    ]
   }
 }
