@@ -1,3 +1,26 @@
+## [1.1.6](https://github.com/suressk/sure-utils/compare/v1.1.3...v1.1.6) (2026-06-02)
+
+
+### Bug Fixes
+
+* ☕️ eslint --fix ([62f0fe7](https://github.com/suressk/sure-utils/commit/62f0fe79e82d6bd252dd22ef2ca53c18a8eea3b7))
+* 🏗 remove `isAppleDevice` func ([3f5ef13](https://github.com/suressk/sure-utils/commit/3f5ef13f34d72ad012f66613ad4d86e40613dca4))
+* 🏗 update `dynamicLoadJs` function ([462a4ce](https://github.com/suressk/sure-utils/commit/462a4ce444d378381d9c99182dfdb3807470a302))
+* 🚧 renamed `formatMsToSecondsStr` ([e626313](https://github.com/suressk/sure-utils/commit/e626313e1c5f5d077f63fd1abc932fd9069e387b))
+
+
+### Features
+
+* 🏖️ add `convertHexToRgb` ([f31a097](https://github.com/suressk/sure-utils/commit/f31a0979198ec3e504e6ac14888eb07a3a9891df))
+* 🏖 add `dynamicLoadJs` function ([130ffcd](https://github.com/suressk/sure-utils/commit/130ffcdf81e74e462cfac94a89ccc5012d3bb97b))
+* 🏖 add `sleep` func ([88c66a4](https://github.com/suressk/sure-utils/commit/88c66a46bdd5d41ba3ab97b32c417b9ff5d2dcd2))
+* 🏖 add `toString` func ([547c269](https://github.com/suressk/sure-utils/commit/547c269c0e4c201dae39fe0a11d13c02fe97cc52))
+* 🏖 add `ua` ([f60b3e3](https://github.com/suressk/sure-utils/commit/f60b3e36954099a9d58365fb4bb784810e3d9069))
+* 🏖add `lowCase letters` to generateRandomStr ([f3b51d6](https://github.com/suressk/sure-utils/commit/f3b51d6d6005a8111a720ed1cd13ac0e39bb4f2a))
+* 🚀 publish `1.1.5` ([dde590b](https://github.com/suressk/sure-utils/commit/dde590b526da08e0893d5363ab5ec59ff9c90249))
+
+
+
 ## [1.1.3](https://github.com/suressk/sure-utils/compare/v1.1.2...v1.1.3) (2022-08-02)
 
 
