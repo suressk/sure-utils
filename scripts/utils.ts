@@ -1,13 +1,11 @@
-import { existsSync, writeFileSync } from 'fs'
-import { resolve } from 'path'
-import colors from 'picocolors'
-import minimist from 'minimist'
-import type { ReleaseType } from 'semver'
-import semver from 'semver'
-import type { Options as ExecaOptions } from 'execa'
-import execa from 'execa'
+import { existsSync, writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import execa, { type Options as ExecaOptions } from 'execa'
 import fsExtra from 'fs-extra'
+import minimist from 'minimist'
+import colors from 'picocolors'
 import prompts from 'prompts'
+import semver, { type ReleaseType } from 'semver'
 
 // 命令行参数
 export const args = minimist(process.argv.slice(2))
@@ -19,6 +17,7 @@ export const args = minimist(process.argv.slice(2))
  * - package.json content
  * - current version
  * - absolute packagePath
+ *
  * @returns
  */
 export const getPackageInfo = () => {
@@ -50,7 +49,7 @@ export const getPackageInfo = () => {
     pkg,
     pkgPath,
     pkgDir,
-    currentVersion
+    currentVersion,
   }
 }
 
@@ -58,7 +57,7 @@ export const getPackageInfo = () => {
 export async function run(
   bin: string,
   args: string[],
-  opts: ExecaOptions<string> = {}
+  opts: ExecaOptions<string> = {},
 ) {
   return execa(bin, args, { stdio: 'inherit', ...opts })
 }
@@ -70,52 +69,54 @@ export function getVersionChoices(currentVersion: string) {
   const isStable = !currentBeta && !currentAlpha
 
   function inc(i: ReleaseType, tag = currentAlpha ? 'alpha' : 'beta') {
-    return semver.inc(currentVersion, i, tag)!
+    return semver.inc(currentVersion, i, tag) ?? ''
   }
 
   let versionChoices = [
     {
       title: 'next',
-      value: inc(isStable ? 'patch' : 'prerelease')
-    }
+      value: inc(isStable ? 'patch' : 'prerelease'),
+    },
   ]
 
   if (isStable) {
     versionChoices.push(
       {
         title: 'beta-minor',
-        value: inc('preminor')
+        value: inc('preminor'),
       },
       {
         title: 'beta-major',
-        value: inc('premajor')
+        value: inc('premajor'),
       },
       {
         title: 'alpha-minor',
-        value: inc('preminor', 'alpha')
+        value: inc('preminor', 'alpha'),
       },
       {
         title: 'alpha-major',
-        value: inc('premajor', 'alpha')
+        value: inc('premajor', 'alpha'),
       },
       {
         title: 'minor',
-        value: inc('minor')
+        value: inc('minor'),
       },
       {
         title: 'major',
-        value: inc('major')
-      }
+        value: inc('major'),
+      },
     )
-  } else if (currentAlpha) {
+  }
+  else if (currentAlpha) {
     versionChoices.push({
       title: 'beta',
-      value: `${inc('patch')}-beta.0`
+      value: `${inc('patch')}-beta.0`,
     })
-  } else {
+  }
+  else {
     versionChoices.push({
       title: 'stable',
-      value: inc('patch')
+      value: inc('patch'),
     })
   }
   versionChoices.push({ value: 'custom', title: 'custom' })
@@ -142,7 +143,7 @@ export function updateVersion(pkgPath: string, version: string): void {
 // generate commit message and commit all files
 export async function generateCommit(
   pkgDir: string,
-  initialCommitMsg = 'chore: update some configuration'
+  initialCommitMsg = 'chore: update some configuration',
 ) {
   step('\nGenerating changelog...')
   const changelogArgs = [
@@ -151,7 +152,7 @@ export async function generateCommit(
     'angular',
     '-i',
     'CHANGELOG.md',
-    '-s'
+    '-s',
   ]
   await run('npx', changelogArgs, { cwd: pkgDir })
 
@@ -161,7 +162,7 @@ export async function generateCommit(
     type: 'text',
     name: 'commitMsg',
     message: 'Input commit message',
-    initial: initialCommitMsg
+    initial: initialCommitMsg,
   })
   await run('git', ['commit', '-m', commitMsg])
 }

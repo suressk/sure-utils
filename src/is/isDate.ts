@@ -1,5 +1,5 @@
-import { toTypeString } from '../.internal/staticFucs'
 import { DATE_TAG } from '../.internal/constants'
+import { toTypeString } from '../.internal/staticFucs'
 import isObject from './isObject'
 
 /**

@@ -3,13 +3,14 @@ import {
   isNull,
   isString,
   isSymbol,
-  isUndefined
+  isUndefined,
 } from '../is'
 
 // const INFINITY = 1 / 0
 
 /**
  * Converts `value` to a string
+ *
  * @param val
  * @returns
  *

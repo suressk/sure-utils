@@ -1,6 +1,6 @@
+import { randomLetters } from '../.internal/constants'
 import { isArray } from '../is'
 import { getRandomNum } from '../numbers'
-import { randomLetters } from '../.internal/constants'
 
 /**
  * Generate a random string with `numbers` & `upperCase letters` & `lowCase letters`
@@ -12,7 +12,7 @@ import { randomLetters } from '../.internal/constants'
  */
 const generateRandomStr = (
   randomStrLen = 10,
-  letters?: string[]
+  letters?: string[],
 ): string => {
   /**
    * another way:

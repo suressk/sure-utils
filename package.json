@@ -20,7 +20,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "lint": "eslint  --config eslint.config.mjs scripts/**/*.ts src/**/*.ts --fix",
+    "lint": "eslint  --config eslint.config.mjs src/**/*.ts --fix",
     "build": "unbuild",
     "build:tsc": "rimraf lib/ && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
     "prepare": "husky install",

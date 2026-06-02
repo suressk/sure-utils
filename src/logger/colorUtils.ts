@@ -1,4 +1,4 @@
-import { SPLIT_TAG, color } from './constants'
+import { color, SPLIT_TAG } from './constants'
 
 const addStyle = (str: string, styles: string) => {
   const strArr = str.split(SPLIT_TAG)
@@ -45,7 +45,7 @@ const colorUtils = {
   },
   bgBlue: (str: string) => {
     return addStyle(str, `background: ${color.blue};`)
-  }
+  },
 }
 
 export default colorUtils

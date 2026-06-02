@@ -10,6 +10,7 @@ const sohuIpAddressUrl = 'http://pv.sohu.com/cityjson?ie=utf-8'
 
 /**
  * Get user ip address and citys info with third part service
+ *
  * @returns
  */
 export const getUserIp = () => {
@@ -25,7 +26,8 @@ export const getUserIp = () => {
       try {
         document.body.removeChild(scriptElement)
         resolve((window as unknown as ReturnCitySnWindow).returnCitySN)
-      } catch (e) {
+      }
+      catch (e) {
         reject(e)
       }
     }

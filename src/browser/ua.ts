@@ -1,12 +1,12 @@
 /**
- * @typedef {Object} ParseUserAgentReturn
- * @property {Boolean} isAndroid is Android Platform
- * @property {Boolean} isIOS is iOS Platform
- * @property {Boolean} isWX is WeiXin
- * @property {Boolean} isWeibo is Weibo
- * @property {String} platform platform name `"android"` / `"ios"`
- * @property {String} androidVersion version of Android
- * @property {String} iosVersion version of iOS
+ * @typedef {object} ParseUserAgentReturn
+ * @property {boolean} isAndroid is Android Platform
+ * @property {boolean} isIOS is iOS Platform
+ * @property {boolean} isWX is WeiXin
+ * @property {boolean} isWeibo is Weibo
+ * @property {string} platform platform name `"android"` / `"ios"`
+ * @property {string} androidVersion version of Android
+ * @property {string} iosVersion version of iOS
  */
 
 interface IUa {
@@ -21,7 +21,8 @@ interface IUa {
 
 /**
  * Parse UserAgent str to get platform name and which app inner env
- * @param {String} [UA = window.navigator.userAgent] UserAgent
+ *
+ * @param {string} [UA] UserAgent
  * @return {ParseUserAgentReturn} ua infomation
  */
 const parseUserAgent = (UA: string = window.navigator.userAgent) => {
@@ -39,7 +40,7 @@ const parseUserAgent = (UA: string = window.navigator.userAgent) => {
     isAndroid,
     isIOS,
     isWX,
-    isWeibo
+    isWeibo,
   }
 
   let platform = 'other'
@@ -55,7 +56,8 @@ const parseUserAgent = (UA: string = window.navigator.userAgent) => {
       androidVersion = androidVersion.substring(p0 + 8)
 
       ua.androidVersion = androidVersion
-    } catch (error) { }
+    }
+    catch (_e) {}
   }
 
   if (isIOS) {
@@ -64,9 +66,10 @@ const parseUserAgent = (UA: string = window.navigator.userAgent) => {
       const p0 = UA.indexOf('cpu iphone os ')
       const p1 = UA.indexOf(' like mac os')
       let iosVersion = UA.substring(p0 + 14, p1)
-      iosVersion = iosVersion.replace(/_/gim, '.')
+      iosVersion = iosVersion.replace(/_/g, '.')
       ua.iosVersion = iosVersion
-    } catch (error) { }
+    }
+    catch (_e) { }
   }
 
   ua.platform = platform

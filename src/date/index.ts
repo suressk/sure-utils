@@ -1,5 +1,5 @@
-export { default as isValidDate } from './isValidDate'
-export { default as getTwoDaysDiffMS } from './getTwoDaysDiffMS'
 export { default as getDayOfYear } from './getDayOfYear'
-export { default as getTimeFromDate } from './getTimeFromDate'
 export { default as getNowTimeStr } from './getNowTimeStr'
+export { default as getTimeFromDate } from './getTimeFromDate'
+export { default as getTwoDaysDiffMS } from './getTwoDaysDiffMS'
+export { default as isValidDate } from './isValidDate'

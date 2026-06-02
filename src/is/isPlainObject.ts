@@ -1,6 +1,6 @@
+import { OBJECT_TAG } from '../.internal/constants'
 import { toTypeString } from '../.internal/staticFucs'
 import getPrototype from '../getPrototype'
-import { OBJECT_TAG } from '../.internal/constants'
 import isObject from './isObject'
 
 /**

@@ -5,7 +5,7 @@
  * @param min the min integer (`contain`)
  * @param max the max integer (`not contain`)
  * @returns {number} an integer in `[min, max)`
- * */
+  */
 export const getRandomNum = (min = 0, max = 100): number => {
   return ~~(Math.random() * (max - min) + min)
 }
@@ -13,6 +13,7 @@ export const getRandomNum = (min = 0, max = 100): number => {
 /**
  * Get the average
  * 获取平均值（保留两位小数）
+ *
  * @param args
  * @returns
  */

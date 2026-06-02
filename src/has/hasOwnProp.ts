@@ -9,7 +9,7 @@ import { hasOwnProperty } from '../.internal/staticFucs'
  */
 const hasOwnProp = (
   val: object,
-  key: string | symbol
+  key: string | symbol,
 ): key is keyof typeof val => hasOwnProperty.call(val, key)
 
 export default hasOwnProp

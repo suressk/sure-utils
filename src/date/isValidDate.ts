@@ -19,4 +19,4 @@ const isValidDate = (val: string | number | Date): boolean => {
   return !Number.isNaN(val.valueOf())
 }
 
-export default isValidDate;
+export default isValidDate

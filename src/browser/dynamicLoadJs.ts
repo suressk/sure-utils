@@ -1,10 +1,11 @@
 /**
  * Load js asynchronously
+ *
  * @param url The js url that needs to be loaded - `script src`
  * @param onSuccess The callback function for js loading completion
  * @param onFail The callback function for js loading failure
  */
-const dynamicLoadJs = (url: string, onSuccess?: Function, onFail?: OnErrorEventHandler) => {
+const dynamicLoadJs = (url: string, onSuccess?: unknown, onFail?: OnErrorEventHandler) => {
   const headEl = document.head || document.getElementsByTagName('head')[0]
   const scriptEl = document.createElement('script')
 
@@ -44,6 +45,7 @@ const dynamicLoadJs = (url: string, onSuccess?: Function, onFail?: OnErrorEventH
 
 /**
  * Load js asynchronously with Promise
+ *
  * @param url The js url that needs to be loaded - `script src`
  */
 const dynamicLoadJsPromise = (url: string) => {
@@ -54,5 +56,5 @@ const dynamicLoadJsPromise = (url: string) => {
 
 export {
   dynamicLoadJs,
-  dynamicLoadJsPromise
+  dynamicLoadJsPromise,
 }

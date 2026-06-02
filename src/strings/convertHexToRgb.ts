@@ -12,7 +12,7 @@
 const convertHexToRgb = (hexColor: string) => {
   let sColor = hexColor.toLowerCase()
   // 16 进制颜色值
-  const reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/
+  const reg = /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/
   if (sColor && reg.test(sColor)) {
     if (sColor.length === 4) {
       let sColorNew = '#'
@@ -24,7 +24,7 @@ const convertHexToRgb = (hexColor: string) => {
     // 处理六位的颜色值
     const sColorChange = []
     for (let i = 1; i < 7; i += 2) {
-      sColorChange.push(parseInt(`0x${sColor.slice(i, i + 2)}`))
+      sColorChange.push(Number.parseInt(`0x${sColor.slice(i, i + 2)}`))
     }
     return `RGB(${sColorChange.join(',')})`
   }

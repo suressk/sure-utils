@@ -5,7 +5,7 @@ export const color = {
   red: '#C02C38',
   green: '#42C02E',
   yellow: '#F1CA17',
-  blue: '#15559A'
+  blue: '#15559A',
 }
 
 export const SPLIT_TAG = '__styles__'

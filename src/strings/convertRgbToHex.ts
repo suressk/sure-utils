@@ -12,7 +12,7 @@
 const convertRgbToHex = (
   r: number,
   g: number,
-  b: number
+  b: number,
 ) => {
   if (
     r < 0 || r > 255

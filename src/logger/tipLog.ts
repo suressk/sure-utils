@@ -1,19 +1,20 @@
 import {
   _console,
   sureUtilsPrefix,
-  tipPrefix
+  tipPrefix,
 } from './constants'
 import generateLogMsg from './generateLogMsg'
 
 /**
  * sure-utils tip [msg content]
+ *
  * @param args
  */
 const tipLog = (...args: string[]) => {
   const msgs = generateLogMsg(
     sureUtilsPrefix,
     tipPrefix,
-    ...args
+    ...args,
   )
   _console.log(...msgs)
 }

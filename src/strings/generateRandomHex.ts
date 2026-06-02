@@ -3,6 +3,7 @@
  * 获取随机的 16 进制颜色值
  * [`.padEnd()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
  * 不足的位数用 0 填充（目标长度为 6）
+ *
  * @returns
  *
  * examples:

@@ -31,6 +31,7 @@ interface WindowPerformance extends Performance {
 
 /**
  * Format memory data size as `xxMB`
+ *
  * @param val
  * @returns
  */
@@ -38,6 +39,7 @@ export const formatMemoryToMB = (val: number) => `${(val / 1024 / 1024).toFixed(
 
 /**
  * Format time to be seconds from milliseconds
+ *
  * @param val
  * @returns
  */
@@ -45,6 +47,7 @@ export const formatMsToSecondsStr = (val: number) => `${~~(val / 1000)}s`
 
 /**
  * Get browser native information
+ *
  * @returns
  */
 export const getBrowserInfo = (): Promise<BrowserInfo> => {

@@ -1,19 +1,20 @@
 import {
   _console,
   sureUtilsPrefix,
-  warnPrefix
+  warnPrefix,
 } from './constants'
 import generateLogMsg from './generateLogMsg'
 
 /**
  * sure-utils warn [msg content]
+ *
  * @param args
  */
 const warnLog = (...args: string[]) => {
   const msgs = generateLogMsg(
     sureUtilsPrefix,
     warnPrefix,
-    ...args
+    ...args,
   )
   _console.warn(...msgs)
 }

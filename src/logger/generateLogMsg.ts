@@ -11,6 +11,7 @@ import { SPLIT_TAG } from './constants'
  *  'color: #15559A;...',
  *  'color: #FFFFFF;...'
  * ]
+ *
  * @param msgs msg & style string Array
  * @returns
  */

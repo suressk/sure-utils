@@ -1,5 +1,5 @@
-import isObject from './isObject'
 import isFunction from './isFunction'
+import isObject from './isObject'
 
 /**
  * Check if `value` is `Promise`

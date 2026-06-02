@@ -1,6 +1,6 @@
+import colors from 'picocolors'
 import prompts from 'prompts'
 import semver from 'semver'
-import colors from 'picocolors'
 import {
   args,
   generateCommit,
@@ -8,7 +8,7 @@ import {
   getVersionChoices,
   run,
   step,
-  updateVersion
+  updateVersion,
 } from './utils'
 
 async function main(): Promise<void> {
@@ -20,7 +20,7 @@ async function main(): Promise<void> {
       type: 'select',
       name: 'release',
       message: 'Select release type',
-      choices: getVersionChoices(currentVersion)
+      choices: getVersionChoices(currentVersion),
     })
 
     if (release === 'custom') {
@@ -28,10 +28,11 @@ async function main(): Promise<void> {
         type: 'text',
         name: 'version',
         message: 'Input custom version',
-        initial: currentVersion
+        initial: currentVersion,
       })
       targetVersion = version
-    } else {
+    }
+    else {
       targetVersion = release
     }
   }
@@ -52,7 +53,7 @@ async function main(): Promise<void> {
   const { confirmRelease }: { confirmRelease: boolean } = await prompts({
     type: 'confirm',
     name: 'confirmRelease',
-    message: `Releasing ${colors.yellow(tag)} Confirm?`
+    message: `Releasing ${colors.yellow(tag)} Confirm?`,
   })
 
   if (!confirmRelease) {
