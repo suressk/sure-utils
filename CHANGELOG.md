@@ -1,3 +1,7 @@
+## [1.1.7](https://github.com/suressk/sure-utils/compare/v1.1.6...v1.1.7) (2026-06-02)
+
+
+
 ## [1.1.6](https://github.com/suressk/sure-utils/compare/v1.1.3...v1.1.6) (2026-06-02)
 
 
