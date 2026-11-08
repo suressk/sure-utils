@@ -1,5 +1,5 @@
 import { SET_TAG } from '../.internal/constants'
-import { toTypeString } from '../.internal/staticFucs'
+import { toTypeString } from '../.internal/staticFuncs'
 import isObject from './isObject'
 
 /**

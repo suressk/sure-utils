@@ -1,19 +1,19 @@
+export * from './.internal/staticFuncs'
 export * from './arrays'
 export * from './browser'
 export * from './date'
-export * from './numbers'
-export * from './regex'
-export * from './strings'
+export { default as debounce } from './debounce'
+export { default as getPrototype } from './getPrototype'
 export * from './has'
 export * from './is'
 export {
+  colorUtils as chalk,
+  errorLog,
   tipLog,
   warnLog,
-  errorLog,
-  colorUtils as chalk
 } from './logger'
-export * from './.internal/staticFucs'
-export { default as debounce } from './debounce'
-export { default as getPrototype } from './getPrototype'
-export { default as throttle } from './throttle'
+export * from './numbers'
+export * from './regex'
 export { default as sleep } from './sleep'
+export * from './strings'
+export { default as throttle } from './throttle'

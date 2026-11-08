@@ -1,4 +1,4 @@
-import { hasOwnProperty } from '../.internal/staticFucs'
+import { hasOwnProperty } from '../.internal/staticFuncs'
 
 /**
  * Check the key is the val own property

@@ -1,7 +1,7 @@
 /** Used to check objects for own properties. */
-export const hasOwnProperty = Object.prototype.hasOwnProperty
+export const { hasOwnProperty } = Object.prototype
 
-export const getPrototypeOf = Object.getPrototypeOf
+export const { getPrototypeOf } = Object
 
 /* Used to transfer value for string */
 export const objectToString = Object.prototype.toString

@@ -1,4 +1,4 @@
-import { getPrototypeOf } from './.internal/staticFucs'
+import { getPrototypeOf } from './.internal/staticFuncs'
 
 /**
  * Get an object's prototype
